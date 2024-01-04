@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image"
 import styles from "./page.module.css"
 import React, { useEffect } from "react"
 import { Button, Stack } from "@mui/material"
@@ -15,21 +14,6 @@ export default function Home() {
     currentQueueSize = arrayQueue.filter((v) => v == 1).length
   }
 
-  const [display, setDisplay] = React.useState({
-    front,
-    rear,
-    currentQueueSize,
-    arrayQueue,
-  })
-
-  const updateDisplay = (
-    front: number,
-    rear: number,
-    currentQueueSize: number,
-    arrayQueue: Array<number>
-  ) => {
-    setDisplay({ front, rear, currentQueueSize, arrayQueue })
-  }
   const addQueue = () => {
     if (front == arrayCount - 1) {
       front = -1
